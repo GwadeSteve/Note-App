@@ -9,7 +9,7 @@ This is a note-taking application developed using Django Rest Framework (DRF) fo
 ### Backend (Django Rest Framework)
 
 - **Custom User Model**:
-  - Fields: `first_name`, `last_name`, `email`, `gender`, `password`, `profile_picture`.
+  - Fields: `first_name`, `last_name`, `email`, `password`, `profile_picture`.
   
 - **Note Model**:
   - Fields: `user` (ForeignKey to Custom User), `title`, `content`, `created_at`, `updated_at`.
@@ -30,9 +30,9 @@ This is a note-taking application developed using Django Rest Framework (DRF) fo
 ### API Endpoints
 
 - User Authentication:
-  - Registration (`POST /api/users/register/`)
-  - Login (`POST /api/users/login/`)
-  - Logout (`POST /api/users/logout/`)
+  - Registration (`POST /accounts/register/`)
+  - Login (`POST /accounts/login/`)
+  - Logout (`POST /accounts/logout/`)
   
 - Notes Operations:
   - Create a Note (`POST /api/notes/`)
