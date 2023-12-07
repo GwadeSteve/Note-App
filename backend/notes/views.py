@@ -1,8 +1,9 @@
 from rest_framework import generics, permissions
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from .models import Note
 from .serializers import NoteSerializer
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from django.db.models import Q
 
 class NoteListView(generics.ListAPIView):
     serializer_class = NoteSerializer
@@ -12,7 +13,6 @@ class NoteListView(generics.ListAPIView):
         return Note.objects.filter(user=self.request.user)
 
 class NoteDetailView(generics.RetrieveAPIView):
-    queryset = Note.objects.all()
     serializer_class = NoteSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -20,16 +20,17 @@ class NoteDetailView(generics.RetrieveAPIView):
         return Note.objects.filter(user=self.request.user)
 
 class NoteCreateView(generics.CreateAPIView):
-    queryset = Note.objects.all()
     serializer_class = NoteSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
+    def get_queryset(self):
+        return Note.objects.filter(user=self.request.user)
+
 # Update a note
 class NoteUpdateView(generics.UpdateAPIView):
-    queryset = Note.objects.all()
     serializer_class = NoteSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -37,16 +38,20 @@ class NoteUpdateView(generics.UpdateAPIView):
         return Note.objects.filter(user=self.request.user)
 
 class NoteDeleteView(generics.DestroyAPIView):
-    queryset = Note.objects.all()
     serializer_class = NoteSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         return Note.objects.filter(user=self.request.user)
+    
+class NoteSearchView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
 
-@api_view(['POST'])
-def NoteSearchView(request):
-    query = request.data.get('query')  # Assuming 'query' is sent in the request data
-    notes = Note.objects.filter(user=request.user, title__icontains=query)
-    serializer = NoteSerializer(notes, many=True)
-    return Response(serializer.data)
+    def post(self, request):
+        query = request.data.get('query', '')
+        notes = Note.objects.filter(
+            Q(title__icontains=query) | Q(content__icontains=query),
+            user=request.user
+        )
+        serializer = NoteSerializer(notes, many=True)
+        return Response(serializer.data)
