@@ -1,4 +1,5 @@
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status, permissions
 from rest_framework.authtoken.models import Token
@@ -55,3 +56,11 @@ class UserLogoutView(APIView):
         except Token.DoesNotExist:
             return Response({'error': 'User not logged in'}, status=status.HTTP_400_BAD_REQUEST)
         return Response({'message': 'Logout successful'}, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def AuthStatus(request):
+    user = request.user
+    if user.is_authenticated:
+        return Response({'status' : 'OK'})
+    return Response({'status': 'NOT'})
