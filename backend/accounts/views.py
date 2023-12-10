@@ -17,8 +17,14 @@ class UserRegistrationView(APIView):
             user.set_password(password) 
             user.save() 
 
-            token = Token.objects.create(user=user)
-            return Response({'token': token.key}, status=status.HTTP_201_CREATED)
+            user_data = {
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'email': user.email,
+                'profile_pic': user.profile_pic if user.profile_pic else None
+            }
+            token = Token.objects.create(user=user) 
+            return Response({'token': token.key, 'user': user_data}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -29,8 +35,14 @@ class UserLoginView(APIView):
         password = request.data.get('password')
         user = authenticate(request, email=email, password=password)
         if user is not None:
+            user_data = {
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'email': user.email,
+                'profile_pic': user.profile_pic if user.profile_pic else None
+            }
             token, created = Token.objects.get_or_create(user=user)
-            return Response({'token': token.key}, status=status.HTTP_200_OK)
+            return Response({'token': token.key, 'user': user_data}, status=status.HTTP_200_OK)
         return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
