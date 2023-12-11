@@ -1,5 +1,6 @@
 import React from 'react';
 import FormLeft from "../components/FormLeft";
+import FormRight from '../components/FormRight';
 
 const LoginPage = () => {
   const { pathname } = window.location;
@@ -7,7 +8,8 @@ const LoginPage = () => {
 
   return (
     <div>
-      <FormLeft page={name} />
+      <FormLeft />
+      <FormRight page={name} />
     </div>
   );
 };

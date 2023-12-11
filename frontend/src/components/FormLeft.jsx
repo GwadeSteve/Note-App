@@ -1,7 +1,7 @@
 import React from "react";
 import RandomNote from "./RandomNote";
 
-const FormLeft = ({page}) => {
+const FormLeft = () => {
 
     const Quotes = [
         {
@@ -28,9 +28,9 @@ const FormLeft = ({page}) => {
         
   return (
     
-    <div>
-      <h1>{page}</h1>
-      <RandomNote quotes={Quotes} />
+    <div className="Left-Form">
+      <h1>Random Quotes</h1>
+      <RandomNote quotes={Quotes}/>
     </div>
   )
 }
