@@ -4,41 +4,26 @@ import './LoadingPage.css';
 
 const LoadingPage = () => {
   const navigate = useNavigate();
-  const [authStatus, setAuthStatus] = useState('');
+  const [message, setMessage] = useState('');
 
-  const fetchAuthStatus = useCallback(async () => {
-    try {
-      const response = await fetch('/accounts/auth_status/');
-      if (response.ok) {
-        const data = await response.json();
-        setAuthStatus(data.status);
-      } else {
-        console.error('Failed to fetch authentication status');
-        setAuthStatus('Failed to fetch');
-      }
-    } catch (error) {
-      console.error('Error fetching authentication status:', error);
-      setAuthStatus('Error fetching data');
+  const checkUserToken = useCallback(() => {
+    const token = localStorage.getItem('userToken');
+    if (token) {
+      setMessage('OK');
+      setTimeout(() => {
+        navigate('/notes');
+      }, 4000);
+    } else {
+      setMessage('NOT');
+      setTimeout(() => {
+        navigate('/login');
+      }, 4000);
     }
-  }, []);
+  }, [navigate]);
 
   useEffect(() => {
-    fetchAuthStatus();
-  }, [fetchAuthStatus]);
-
-  useEffect(() => {
-    const redirectToApp = (status) => {
-        setTimeout(() => {
-          if (status === 'OK') {
-            navigate('/notes');
-          } else {
-            navigate('/login');
-          }
-        }, 4000);
-      };
-
-    redirectToApp(authStatus); // Call redirectToApp after authStatus updates
-  }, [authStatus, navigate]);
+    checkUserToken();
+  }, [checkUserToken]);
 
   return (
     <div className='wrapper'>
@@ -50,11 +35,9 @@ const LoadingPage = () => {
         <span></span>
       </div>
       <div className='Message'>
-        {authStatus === 'OK' ? (
-          <p>Preparing your Space</p>
-        ) : (
-          <p>Redirecting to Login</p>
-        )}
+        {
+          message === 'OK' ? (<p>Preparing your space ...</p>) : (<p>Redirecting to Auth  ...</p>)
+        }
       </div>
     </div>
   );

@@ -6,9 +6,9 @@ function RandomNote({ quotes }) {
 
   return (
     <div>
-      <h2>Random Note</h2>
-      <p>Quote: {randomQuote.quote}</p>
-      <p> <span>{randomQuote.title}</span> - Author: Gwade Steve</p>
+      <h1>Random Note</h1>
+      <p>" {randomQuote.quote}</p>
+      <p>{randomQuote.title} - <span>Gwade Steve</span></p>
     </div>
   );
 }

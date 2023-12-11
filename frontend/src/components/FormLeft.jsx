@@ -29,7 +29,6 @@ const FormLeft = () => {
   return (
     
     <div className="Left-Form">
-      <h1>Random Quotes</h1>
       <RandomNote quotes={Quotes}/>
     </div>
   )
