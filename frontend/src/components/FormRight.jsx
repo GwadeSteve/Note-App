@@ -32,8 +32,7 @@ const FormRight = ({ page }) => {
 
         if (response.ok) {
           const { token } = await response.json();
-          localStorage.setItem('userToken', token); // Store token in local storage
-          console.log('Login successful. Token:', token);
+          localStorage.setItem('userToken', token);
           navigate('/');
         } else {
           console.error('Login failed');
@@ -51,8 +50,7 @@ const FormRight = ({ page }) => {
 
           if (response.ok) {
             const { token } = await response.json();
-            localStorage.setItem('userToken', token); // Store token in local storage
-            console.log('Registration successful. Token:', token);
+            localStorage.setItem('userToken', token); 
           } else {
             console.error('Registration failed');
           }
