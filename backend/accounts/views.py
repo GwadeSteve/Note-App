@@ -64,3 +64,12 @@ def AuthStatus(request):
     if user.is_authenticated:
         return Response({'status' : 'OK'})
     return Response({'status': 'NOT'})
+
+
+@api_view(['GET'])
+def GetAuthToken(request):
+    user = request.user
+    if user.is_authenticated:
+        token, _ = Token.objects.get_or_create(user=user)
+        return Response({'token': token.key}, status=status.HTTP_200_OK)
+    return Response({'token': '-1'},status=status.HTTP_404_NOT_FOUND)
