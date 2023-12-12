@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import '../pages/Auth.css';
 
 const FormRight = ({ page }) => {
   const [formData, setFormData] = useState({
@@ -64,36 +65,55 @@ const FormRight = ({ page }) => {
   };
 
   return (
-    <div className="Right-Form">
-      <h1>{page}</h1>
+    <div className="Right">
+      <h1 className='Highlight'>{page}</h1>
       <form onSubmit={handleFormSubmit}>
         {page === 'Login' ? (
-          <>
-            <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
-            <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
+          <div className='content'>
+            <div className="inputs">
+              <div className="input">
+                <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
+              </div>
+              <div className="input">
+                <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
+              </div>
+            </div>
             <button type="submit">LOGIN</button>
             <p>
               Don't yet have an account? <Link to="/register">Create an account</Link>
             </p>
-          </>
+          </div>
         ) : (
-          <>
-            <input type="text" name="firstName" placeholder="First Name" onChange={handleInputChange} required />
-            <input type="text" name="lastName" placeholder="Last Name" onChange={handleInputChange} required />
-            <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
-            <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
-            <input
-              type="password"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              onChange={handleInputChange}
-              required
-            />
+          <div className='content'>
+            <div className="inputs">
+                <div className="input">
+                  <input type="text" name="firstName" placeholder="First Name" onChange={handleInputChange} required />
+                </div>
+                <div className="input">
+                  <input type="text" name="lastName" placeholder="Last Name" onChange={handleInputChange} required />
+                </div>
+                <div className="input">
+                  <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
+                </div>
+                <div className="input">
+                  <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
+                </div>
+                <div className="input">
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  placeholder="Confirm Password"
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+            </div>
+            
             <button type="submit">REGISTER</button>
             <p>
               Already have an account? <Link to="/login">Login Instead</Link>
             </p>
-          </>
+          </div>
         )}
       </form>
     </div>

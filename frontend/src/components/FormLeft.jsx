@@ -1,5 +1,6 @@
 import React from "react";
 import RandomNote from "./RandomNote";
+import '../pages/Auth.css';
 
 const FormLeft = () => {
 
@@ -28,7 +29,7 @@ const FormLeft = () => {
         
   return (
     
-    <div className="Left-Form">
+    <div className="Left">
       <RandomNote quotes={Quotes}/>
     </div>
   )

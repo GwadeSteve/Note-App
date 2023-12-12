@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import RegistrationPage from './pages/RegistrationPage';
 import NotesList from './pages/NotesList';
 import NotePage from './pages/NotePage';
+import AddButton from './components/AddButton';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/notes" element={<NotesList />} />
         <Route path="/notes/:id" element={<NotePage />} />
       </Routes>
+      <AddButton/>
     </BrowserRouter>
   );
 };
