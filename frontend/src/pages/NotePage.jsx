@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './Auth.css';
 
 const NotePage = () => {
   const { id } = useParams();
@@ -117,22 +118,46 @@ const NotePage = () => {
     }
   }
 
+  let formatDate = (date) => {
+    const formattedDate = new Date(date);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDateTime = formattedDate.toLocaleDateString(undefined, options);
+    return formattedDateTime
+  }
+
+  let formatTime = (date) => {
+    const formattedTime = new Date(date);
+    const options = { hour: 'numeric', minute: 'numeric' };
+    const formattedDateTime = formattedTime.toLocaleTimeString(undefined, options);
+    return formattedDateTime
+  }
+
+
   return (
     <div className='TextAreas'>
+      { id !== 'create' ? (
       <>
-        <textarea onChange={(e) => setNote({ ...note, "title": e.target.value })} value={note.title} required></textarea>
-        <textarea onChange={(e) => setNote({ ...note, "content": e.target.value })} value={note.content} required></textarea>
-        {id !== 'create' ? (
-          <>
-            <button type="button" className='Save' onClick={handleSubmit}>Save</button>
-            <button type="button" className='Delete' onClick={deleteNote}>Delete</button>
-          </>
-        ) : (
-          <button type="button" className='Save' onClick={handleSubmit}>Create</button>
-        )}
+        <div className='LastEdit'>Last edit on {formatDate(note.updated_at)} at {formatTime(note.updated_at)}</div>
+        <textarea onChange={(e) => setNote({ ...note, "title": e.target.value })} value={note.title} placeholder='Title' className='TypeTitle' required></textarea>
+        <textarea onChange={(e) => setNote({ ...note, "content": e.target.value })} value={note.content} placeholder='Enter note body' className='TypeContent' required></textarea>
+        <div className='Buttons'>
+          <button type="button" className='Save' onClick={handleSubmit}>Save</button>
+          <button type="button" className='Delete' onClick={deleteNote}>Delete</button>
+        </div>
       </>
+) : (
+      <>
+        <div className='LastEdit'>Creating new note</div>
+        <textarea onChange={(e) => setNote({ ...note, "title": e.target.value })} value={note.title} placeholder='Title' className='TypeTitle' required></textarea>
+        <textarea onChange={(e) => setNote({ ...note, "content": e.target.value })} value={note.content} placeholder='Enter note body' className='TypeContent' required></textarea>
+        <div className='Buttons'>
+          <button type="button" className='Create' onClick={handleSubmit}>Create</button>
+        </div>
+      </>
+)}
     </div>
   );
 };
 
 export default NotePage;
+

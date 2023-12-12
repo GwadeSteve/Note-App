@@ -1,17 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
 * {
     margin: 0;
     padding: 0;
     font-family: var(--font1);
 }
 
+body {
+    background: #242424;
+}
+
 :root {
     --font1: 'Raleway', 'sans-serif';
-    --font2: 'Alkatra', 'sans-serif';
+    --font2: 'Poppins', 'sans-serif';
+    --highlight: #F0C016;
+}
+
+.Navbar {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    margin-bottom: 20px;
+}
+
+.main {
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.Navbar .logo {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.Navbar button {
+    padding: 7px 12px;
+    background: var(--highlight);
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 .Auth {
-    background: #242424;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -20,7 +67,7 @@
 }
 
 .Highlight {
-    color: #F0C016;
+    color: var(--highlight);
 }
 
 .Random {
@@ -63,16 +110,196 @@ form .content {
     align-items: center;
 }
 
-.AddBtn {
-    width: 50px;
-    height: 50px;
+
+/*Note head*/
+
+.Note-head {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.Note-head h1 {
+    color: var(--highlight);
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+.Count {
+    color: #e9e9e935;
+    font-size: 1.8rem;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+
+/*Notes list section*/
+
+a {
+    text-decoration: none;
+}
+
+.Notes-List {
+    width: 100%;
+}
+
+.Note a {
+    width: 100%;
+    transition: 0.2s;
+    background: rgba(39, 39, 40, 0.05);
+    border-left: 1px solid rgba(128, 128, 128, 0.105);
+    border-bottom: 2px solid rgba(128, 128, 128, 0.105);
+    padding: 10px 20px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.Note a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: -1px 4px 1px 0px rgba(56, 56, 56, 0.10);
+}
+
+.List-Date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    font-family: var(--font2);
+}
+
+.tag {
+    color: #BFBFBF;
+    font-size: 0.65rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.tag span {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: rgb(195, 26, 195);
+    margin-right: 10px;
+}
+
+.Date {
+    color: #BFBFBF;
+    font-size: 0.65rem;
+}
+
+.note-title {
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 12px 0 15px 0;
+}
+
+.note-content {
+    color: #BFBFBF;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 163.186%;
+    padding: 5px 0;
+}
+
+.AddBtn {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 75%;
+    right: 30px;
+    border-radius: 100%;
 }
 
 .AddBtn svg {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: 1s all;
+}
+
+
+/*Note pages*/
+
+.TextAreas {
+    padding: 0 60px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.LastEdit {
+    margin: 20px 0;
+    padding: 8px 5px;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.65rem;
+}
+
+.TextAreas textarea {
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+    border: none;
+    outline: none;
+    background: #242424;
+    padding: 5px;
+    line-height: 163.186%;
+}
+
+textarea:focus {
+    border: none;
+    outline: none;
+}
+
+.TypeTitle {
+    color: #FFF;
+    font-size: 1.3rem;
+    font-weight: 600;
+    min-height: 15vh;
+    height: 15vh;
+}
+
+.TypeContent {
+    color: #BFBFBF;
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    min-height: 30vh;
+    height: 30vh;
+}
+
+.Buttons {
+    display: flex;
+}
+
+.Buttons button {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    background: none;
+}
+
+.Create {
+    border: 2px solid #3BCD08;
+    color: #3BCD08;
+}
+
+.Save {
+    border: 2px solid var(--highlight);
+    margin-right: 7px;
+    color: var(--highlight);
+}
+
+.Delete {
+    border: 2px solid #FF2E2E;
+    color: #FF2E2E;
 }

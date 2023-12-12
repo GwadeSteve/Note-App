@@ -11,14 +11,14 @@ const LogOutBtn = () => {
       const response = await fetch('/accounts/logout/', {
         method: 'POST',
         headers: {
-          Authorization: `Token ${token}`, // Include the token in the Authorization header
+          Authorization: `Token ${token}`,
           'Content-Type': 'application/json',
         },
       });
 
       if (response.ok) {
         localStorage.removeItem('userToken');
-        navigate('/'); // Redirect the user to the loading page
+        navigate('/');
       } else {
         console.error('Logout failed');
       }
