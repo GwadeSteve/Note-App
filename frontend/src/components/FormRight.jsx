@@ -10,7 +10,10 @@ const FormRight = ({ page }) => {
     password: '',
     confirmPassword: '',
   });
+  const [showPassword, setShowPassword] = useState(false);
+
   const navigate = useNavigate();
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -72,10 +75,19 @@ const FormRight = ({ page }) => {
           <div className='content'>
             <div className="inputs">
               <div className="input">
-                <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
+                <input type="email" name="email" placeholder="Email" autoComplete="off" onChange={handleInputChange} required />
               </div>
               <div className="input">
-                <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
+                <input 
+                  type={showPassword ? "text" : "password"} 
+                  name="password" 
+                  placeholder="Password" 
+                  onChange={handleInputChange} 
+                  required 
+                />
+                <span className="password-toggle-icon" onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? "Hide" : "Show"}
+                </span>
               </div>
             </div>
             <button type="submit">LOGIN</button>
@@ -96,19 +108,30 @@ const FormRight = ({ page }) => {
                   <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
                 </div>
                 <div className="input">
-                  <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
+                  <input 
+                    type={showPassword ? "text" : "password"} 
+                    name="password" 
+                    placeholder="Password" 
+                    onChange={handleInputChange} 
+                    required 
+                  />
+                  <span className="password-toggle-icon" onClick={() => setShowPassword(!showPassword)}>
+                    {showPassword ? "Hide" : "Show"}
+                  </span>
                 </div>
                 <div className="input">
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="Confirm Password"
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="confirmPassword"
+                    placeholder="Confirm Password"
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <span className="password-toggle-icon" onClick={() => setShowPassword(!showPassword)}>
+                    {showPassword ? "Hide" : "Show"}
+                  </span>
+                </div>
             </div>
-            
             <button type="submit">REGISTER</button>
             <p>
               Already have an account? <Link to="/login">Login Instead</Link>

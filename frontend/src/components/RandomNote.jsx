@@ -11,10 +11,10 @@ function RandomNote({ quotes }) {
         <h1>Random <span className='Highlight'>Note</span></h1>
       </div>
       <div>
-        <p>" {randomQuote.quote}</p>
+        <p className='Quote'>" {randomQuote.quote}</p>
       </div>
       <div>
-        <p><span className='Highlight'>{randomQuote.title} - </span><span>Gwade Steve</span></p>
+        <p><span className='Highlight TiTle'>{randomQuote.title} - </span><span className='Author'>Gwade Steve</span></p>
       </div>
     </div>
   );

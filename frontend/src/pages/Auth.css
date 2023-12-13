@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +13,7 @@ body {
 :root {
     --font1: 'Raleway', 'sans-serif';
     --font2: 'Poppins', 'sans-serif';
+    --font3: 'Beau Rivage', cursive;
     --highlight: #F0C016;
 }
 
@@ -70,18 +72,46 @@ body {
     color: var(--highlight);
 }
 
-.Random {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .Left {
     width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+}
+
+.Random {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+}
+
+.Random h1 {
+    font-size: 1.7rem;
+    padding: 10px 0;
+    color: white;
+    border-bottom: 2px solid var(--highlight);
+    margin-bottom: 20px;
+}
+
+.Random .Quote {
+    font-family: var(--font3);
+    font-size: 1.2rem;
+    color: #e6e6e69d;
+    margin-bottom: 15px;
+}
+
+.Random .TiTle {
+    font-size: 0.85rem;
+    font-weight: light;
+}
+
+.Random .Author {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #e6e6e69d;
 }
 
 .Right {
@@ -89,25 +119,145 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     background: rgba(36, 36, 36, 0.80);
     box-shadow: -4px 0px 10px 0px rgba(174, 174, 175, 0.10);
 }
 
 .Right form {
     width: 100%;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-form .content {
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.input {
+    width: 90%;
+    margin: 4px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #242424;
+}
+
+.input input {
+    max-width: 100%;
+    min-width: 350px;
+    padding: 13px 50px 13px 15px;
+    outline: none;
+    border: 2px solid #141313;
+    background: rgba(27, 27, 27, 0.10);
+    box-shadow: -1px 4px 10px 1px rgba(36, 36, 36, 0.95) inset, 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    color: white;
+    font-size: 0.75rem;
+    position: relative;
+    transition: 1s all;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    transform: translateY(15px);
+    cursor: pointer;
+    font-size: 0.6rem;
+    color: var(--highlight);
+    font-weight: bold;
+    user-select: none;
+}
+
+input::placeholder {
+    color: rgba(191, 191, 191, 0.80);
+    font-size: 0.75rem;
+}
+
+input:valid {
+    max-width: 100%;
+    min-width: 350px;
+    padding: 13px 50px 13px 15px;
+    outline: none;
+    border: 2px solid #141313;
+    background: rgba(27, 27, 27, 0.10);
+    box-shadow: -1px 4px 10px 1px rgba(36, 36, 36, 0.95) inset, 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    color: white;
+    font-size: 0.75rem;
+    position: relative;
+}
+
+input::before {
+    max-width: 100%;
+    min-width: 350px;
+    padding: 13px 50px 13px 15px;
+    outline: none;
+    border: 2px solid #141313;
+    background: rgba(27, 27, 27, 0.10);
+    box-shadow: -1px 4px 10px 1px rgba(36, 36, 36, 0.95) inset, 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    color: white;
+    font-size: 0.75rem;
+    position: relative;
+}
+
+input::after {
+    max-width: 100%;
+    min-width: 350px;
+    padding: 13px 50px 13px 15px;
+    outline: none;
+    border: 2px solid #141313;
+    background: rgba(27, 27, 27, 0.10);
+    box-shadow: -1px 4px 10px 1px rgba(36, 36, 36, 0.95) inset, 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    color: white;
+    font-size: 0.75rem;
+    position: relative;
+}
+
+.content button {
+    background: var(--highlight);
+    font-weight: bold;
+    border: none;
+    padding: 10px 40px;
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.content button:hover {
+    background: #d5a805;
+}
+
+.content p {
+    color: #BFBFBF;
+    font-size: 0.80rem;
+    padding: 7px 0;
+}
+
+.content p a {
+    color: var(--highlight);
+    font-weight: bold;
 }
 
 
