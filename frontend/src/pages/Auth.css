@@ -526,6 +526,11 @@ a {
     margin: 20px 0;
     display: flex;
     flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
 }
 
 .LastEdit {
@@ -545,6 +550,8 @@ a {
     background: #242424;
     padding: 5px;
     line-height: 163.186%;
+    scroll-behavior: smooth;
+    resize: none;
 }
 
 textarea:focus {
@@ -556,8 +563,8 @@ textarea:focus {
     color: #FFF;
     font-size: 1.3rem;
     font-weight: 600;
-    min-height: 15vh;
-    height: 15vh;
+    min-height: 10vh;
+    height: 20vh;
 }
 
 .TypeContent {
@@ -566,7 +573,7 @@ textarea:focus {
     font-weight: 400;
     margin-bottom: 20px;
     min-height: 30vh;
-    height: 30vh;
+    height: 40vh;
 }
 
 .Buttons {
