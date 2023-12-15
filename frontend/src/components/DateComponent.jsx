@@ -6,8 +6,9 @@ const DateComponent = ({ date }) => {
   const formattedDateTime = formattedDate.toLocaleDateString(undefined, options);
 
   return (
-    <div>
-      {formattedDateTime}
+    <div className="List-Date">
+      <div className="tag"><span></span> General</div>
+      <div className="Date">{formattedDateTime}</div>
     </div>
   );
 }

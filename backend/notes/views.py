@@ -13,7 +13,7 @@ class NoteListView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return Note.objects.filter(user=self.request.user)
+        return Note.objects.filter(user=self.request.user).order_by('-updated_at')
 
 class NoteDetailView(generics.RetrieveAPIView):
     """
