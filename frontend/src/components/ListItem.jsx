@@ -12,8 +12,8 @@ const ListItem = ({ note }) => {
     <div className="Note">
       <Link to={`/notes/${note.id}`}>
         <DateComponent date={note?.updated_at}/>
-        <p className='note-title'>{truncateText(note?.title, 30)}</p>
-        <p className='note-content'>{truncateText(note?.content, 70)}</p>
+        <p className='note-title'>{truncateText(note?.title, 70)}</p>
+        <p className='note-content'>{truncateText(note?.content, 140)}</p>
       </Link>
     </div>
   );

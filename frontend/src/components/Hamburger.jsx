@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProfilePicture from './ProfilePicture';
 import '../pages/Auth.css'
@@ -6,6 +6,8 @@ import '../pages/Auth.css'
 const HamburgerMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  const userFirstName = localStorage.getItem('userFirstName') || 'Guest';
+
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -32,6 +34,7 @@ const HamburgerMenu = () => {
 
       if (response.ok) {
         localStorage.removeItem('userToken');
+        localStorage.removeItem('userFirstName');
         navigate('/');
       } else {
         console.error('Logout failed');
@@ -84,7 +87,7 @@ const HamburgerMenu = () => {
           <div className="Profile">
             <li>
               <div className='Recap' onClick={toggleProfileDropdown}>
-                Gwade Steve
+                {userFirstName}
                 <ProfilePicture />
               </div>
               {profileDropdownOpen && (

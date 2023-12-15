@@ -35,7 +35,6 @@ body {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    z-index: -999;
 }
 
 .Navbar .logo {
@@ -74,7 +73,7 @@ svg {
     background: #242424;
     padding: 30px;
     list-style: none;
-    z-index: 999;
+    z-index: 1;
     position: fixed;
     right: 0;
     top: 0;
@@ -151,7 +150,8 @@ svg {
 .Profile .Recap {
     display: flex;
     align-items: center;
-    font-size: 1rem;
+    justify-content: space-around;
+    font-size: 0.81rem;
     font-weight: 600;
     padding: 5px 7px;
 }
@@ -435,7 +435,6 @@ a {
 
 .Notes-List {
     width: 100%;
-    z-index: -1;
 }
 
 .Note a {
