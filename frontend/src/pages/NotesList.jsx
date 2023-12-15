@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ListItem from '../components/ListItem';
 import AddButton from '../components/AddButton';
 import Nav from '../components/Nav';
@@ -7,9 +8,15 @@ import './Auth.css';
 const NotesList = () => {
   const [notes, setNotes] = useState([]);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
+    const token = localStorage.getItem('userToken');
+    if (!token ) {
+      navigate('/')
+    }
     getNotes();
-  }, []);
+  }, [navigate]);
 
   const getNotes = async () => {
     try {

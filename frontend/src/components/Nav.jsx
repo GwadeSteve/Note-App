@@ -1,7 +1,8 @@
 import React from 'react'
-import LogOutBtn from './LogOutBtn'
 import '../pages/Auth.css';
 import AppLogo from './AppLogo';
+import HamburgerMenu from './Hamburger';
+
 
 const Nav = () => {
   return (
@@ -9,8 +10,8 @@ const Nav = () => {
         <div className="logo">
             <AppLogo />
         </div>
-        <LogOutBtn />
-    </header>
+        < HamburgerMenu />       
+ </header>
   )
 }
 

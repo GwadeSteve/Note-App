@@ -9,6 +9,12 @@ const NotePage = () => {
   const [note, setNote] = useState({ title: '', content: '' });
 
   useEffect(() => {
+
+    const token = localStorage.getItem('userToken');
+    if (!token ) {
+      console.log('Token Not found')
+      navigate('/');
+    }
     if (!id) {
       navigate('/notes');
     } else if (id === "create") {
