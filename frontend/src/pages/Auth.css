@@ -8,6 +8,7 @@
 
 body {
     background: #242424;
+    overflow-x: hidden;
 }
 
 :root {
@@ -606,4 +607,84 @@ textarea:focus {
 }
 
 
-/* Disappear Left*/
+/*Search Page*/
+
+.Search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 50px 0;
+}
+
+.Search .search-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+
+.search-input input {
+    width: 100%;
+    padding: 13px 70px 13px 15px;
+    outline: none;
+    border: 2px solid #141313;
+    background: rgba(27, 27, 27, 0.10);
+    box-shadow: -1px 4px 10px 1px rgba(36, 36, 36, 0.95) inset, 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: white;
+    font-size: 0.75rem;
+    position: relative;
+    transition: 1s all;
+}
+
+.search-input button {
+    background: var(--highlight);
+    font-weight: bold;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.75rem;
+    transition: 0.3s;
+    color: black;
+    transform: translateX(-50px);
+}
+
+.search-input button:hover {
+    background: #d5a805;
+}
+
+.Results {
+    padding: 30px 40px;
+}
+
+.no-results-message {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f913;
+}
+
+.no-results-message .no-results-icon {
+    color: var(--highlight);
+    margin-bottom: 10px;
+}
+
+.no-results-message h3 {
+    color: #ddd;
+    margin: 10px 0;
+    font-size: 0.85rem;
+}
+
+.no-results-message p {
+    color: #BFBFBF;
+    margin-bottom: 20px;
+    font-size: 0.7rem;
+}
+
+.no-results-message p a {
+    color: var(--highlight);
+}

@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import ProfilePicture from './ProfilePicture';
 import '../pages/Auth.css'
 
@@ -66,21 +66,21 @@ const HamburgerMenu = () => {
           </div>
           <div className="Utils">
             <li className='utils'>
-              <div className="Label">
+              <Link to='/notes' className="Label">
               OverView
-              </div>
+              </Link>
               <span>Everything in one place</span>
             </li>
             <li className='utils'>
-              <div className="Label">
+              <Link to="/notes/create/" className="Label">
               Create Note
-              </div>
+              </Link>
               <span>You have something on your mind, Write it</span>
             </li>
             <li className='utils'>
-              <div className="Label">
+              <Link to="/notes/search/" className="Label">
               Search Notes
-              </div>
+              </Link>
               <span>Do a quick search to get that note</span>
             </li>
           </div>

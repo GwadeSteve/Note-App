@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListItem from '../components/ListItem';
 import AddButton from '../components/AddButton';
+import NoNotes from '../components/NoNotes';
 import Nav from '../components/Nav';
 import './Auth.css';
 
@@ -48,7 +49,7 @@ const NotesList = () => {
         </div>
         <div className="Notes-List">
           {notes.length === 0 ? (
-            <h3 className='Sorry'>You have no notes for the moment</h3>
+            <NoNotes />
           ) : (
             notes.map((note, index) => <ListItem key={index} note={note} />)
           )}
