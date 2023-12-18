@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Auth.css';
+import { FaArrowLeft } from 'react-icons/fa'; // Importing back arrow icon from Font Awesome
+
 
 const NotePage = () => {
   const { id } = useParams();
@@ -143,7 +145,13 @@ const NotePage = () => {
     <div className='TextAreas'>
       { id !== 'create' ? (
       <>
-        <div className='LastEdit'>Last edit on {formatDate(note.updated_at)} at {formatTime(note.updated_at)}</div>
+        <div className='LastEdit'>
+          <div onClick={() => navigate(-1)} className="GoBackButton">
+            <FaArrowLeft size={16} /> 
+            <span>Go back</span>
+          </div>
+          <span>Last edit on {formatDate(note.updated_at)} at {formatTime(note.updated_at)}</span>
+        </div>
         <textarea onChange={(e) => setNote({ ...note, "title": e.target.value })} value={note.title} placeholder='Title' className='TypeTitle' required></textarea>
         <textarea onChange={(e) => setNote({ ...note, "content": e.target.value })} value={note.content} placeholder='Enter note body' className='TypeContent' required></textarea>
         <div className='Buttons'>
@@ -153,7 +161,13 @@ const NotePage = () => {
       </>
 ) : (
       <>
-        <div className='LastEdit'>Creating new note</div>
+        <div className='LastEdit'>
+        <div onClick={() => navigate(-1)} className="GoBackButton">
+            <FaArrowLeft size={16} /> 
+            <span>Go back</span>
+          </div>
+          <span>Creating new note...</span>
+        </div>
         <textarea onChange={(e) => setNote({ ...note, "title": e.target.value })} value={note.title} placeholder='Title' className='TypeTitle' required></textarea>
         <textarea onChange={(e) => setNote({ ...note, "content": e.target.value })} value={note.content} placeholder='Enter note body' className='TypeContent' required></textarea>
         <div className='Buttons'>

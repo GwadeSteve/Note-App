@@ -39,11 +39,6 @@ const NotesList = () => {
     }
   };
 
-  const colors = ['#3F8DE3', '#2D9B06', '#F05050', '#CBA93A', '#D950F0'];
-  const getRandomColor = () => {
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
-
   return (
     <div>
       <Nav />
@@ -56,7 +51,7 @@ const NotesList = () => {
           {notes.length === 0 ? (
             <NoNotes />
           ) : (
-            notes.map((note, index) => <ListItem key={index} note={note} randomColor={getRandomColor()} />)
+            notes.map((note, index) => <ListItem key={index} note={note} />)
           )}
         </div>
       </div>

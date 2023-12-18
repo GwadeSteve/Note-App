@@ -483,7 +483,8 @@ a {
 
 .Date {
     color: #BFBFBF;
-    font-size: 0.65rem;
+    font-size: 0.55rem;
+    font-family: var(--font2);
 }
 
 .note-title {
@@ -508,7 +509,7 @@ a {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 75%;
+    top: 70vh;
     right: 30px;
     border-radius: 100%;
 }
@@ -539,8 +540,27 @@ textarea::-webkit-scrollbar {
     margin: 20px 0;
     padding: 8px 5px;
     font-family: 'Poppins', sans-serif;
-    color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.LastEdit .GoBackButton {
+    display: flex;
+    align-items: center;
+    color: var(--highlight);
+    cursor: pointer;
+}
+
+.GoBackButton span {
+    margin-left: 5px;
+    font-size: 0.75rem;
+}
+
+.LastEdit>span {
     font-size: 0.65rem;
+    color: #bfbfbf6e;
+    font-family: var(--font2);
 }
 
 .TextAreas textarea {
@@ -566,7 +586,7 @@ textarea:focus {
     font-size: 1.3rem;
     font-weight: 600;
     min-height: 10vh;
-    height: 20vh;
+    height: 15vh;
 }
 
 .TypeContent {
@@ -575,7 +595,7 @@ textarea:focus {
     font-weight: 400;
     margin-bottom: 20px;
     min-height: 30vh;
-    height: 40vh;
+    height: 35vh;
 }
 
 .Buttons {
@@ -597,9 +617,9 @@ textarea:focus {
 }
 
 .Save {
-    border: 2px solid var(--highlight);
+    border: 2px solid rgb(68, 122, 197);
     margin-right: 7px;
-    color: var(--highlight);
+    color: rgb(68, 122, 197);
 }
 
 .Delete {
