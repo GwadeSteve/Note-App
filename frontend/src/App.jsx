@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import RegistrationPage from './pages/RegistrationPage';
 import NotesList from './pages/NotesList';
 import NotePage from './pages/NotePage';
+import SearchPage from './pages/SearchPage';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/register" element={<RegistrationPage />} />
         <Route path="/notes" element={<NotesList />} />
         <Route path="/notes/:id" element={<NotePage />} />
+        <Route path="/notes/search/" element={<SearchPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -8,6 +8,7 @@
 
 body {
     background: #242424;
+    overflow-x: hidden;
 }
 
 :root {
@@ -31,6 +32,7 @@ body {
 
 .main {
     padding: 0 50px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -261,45 +263,8 @@ svg {
     color: #e6e6e69d;
 }
 
-@media screen and (max-width: 690px) {
-    .Left {
-        padding: 0 10px;
-    }
-    .Random h1 {
-        font-size: 1.4rem;
-        padding: 10px 0;
-        color: white;
-        border-bottom: 2px solid var(--highlight);
-        margin-bottom: 20px;
-    }
-    .Random .Quote {
-        font-family: var(--font3);
-        font-size: 1rem;
-        color: #e6e6e69d;
-        margin-bottom: 15px;
-    }
-    .Random .TiTle {
-        font-size: 0.75rem;
-        font-weight: light;
-    }
-    .Random .Author {
-        font-size: 0.65rem;
-        font-weight: bold;
-        color: #e6e6e69d;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .Left {
-        display: none;
-    }
-    .Right {
-        width: 100%;
-    }
-}
-
 .Right {
-    min-width: 55%;
+    width: 100%;
     height: 100%;
     padding: 0 40px;
     display: flex;
@@ -323,6 +288,7 @@ svg {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .inputs {
@@ -331,6 +297,7 @@ svg {
     justify-content: center;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 .input {
@@ -380,7 +347,7 @@ input::placeholder {
     font-weight: bold;
     border: none;
     padding: 10px 40px;
-    width: 100%;
+    width: 70%;
     margin: 15px 0;
     border-radius: 3px;
     cursor: pointer;
@@ -404,6 +371,155 @@ input::placeholder {
     font-weight: bold;
 }
 
+@media screen and (max-width: 690px) {
+    .Left {
+        padding: 0 10px;
+    }
+    .Random h1 {
+        font-size: 1.4rem;
+        padding: 10px 0;
+        color: white;
+        border-bottom: 2px solid var(--highlight);
+        margin-bottom: 20px;
+    }
+    .Random .Quote {
+        font-family: var(--font3);
+        font-size: 1rem;
+        color: #e6e6e69d;
+        margin-bottom: 15px;
+    }
+    .Random .TiTle {
+        font-size: 0.75rem;
+        font-weight: light;
+    }
+    .Random .Author {
+        font-size: 0.65rem;
+        font-weight: bold;
+        color: #e6e6e69d;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .Left {
+        display: none;
+    }
+    .Right {
+        width: 100vw;
+    }
+    .Right h1 {
+        font-size: 1.5rem;
+    }
+    .Right form {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content {
+        width: 100%;
+    }
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .input {
+        margin: 4px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background: #242424;
+        width: 100%;
+    }
+    .input input {
+        width: 90vw;
+        padding: 13px 50px 13px 15px;
+        outline: none;
+        border: 2px solid #141313;
+        background: rgba(27, 27, 27, 0.10);
+        box-shadow: -1px 4px 10px 1px rgba(36, 36, 36, 0.95) inset, 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+        color: white;
+        font-size: 0.75rem;
+        position: relative;
+        transition: 1s all;
+    }
+    .password-toggle-icon {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        transform: translate(-50%, 15px);
+        cursor: pointer;
+        font-size: 0.6rem;
+        color: var(--highlight);
+        font-weight: bold;
+        user-select: none;
+    }
+    input::placeholder {
+        color: rgba(191, 191, 191, 0.80);
+        font-size: 0.6rem;
+    }
+    .content button {
+        background: var(--highlight);
+        font-weight: bold;
+        border: none;
+        padding: 10px;
+        width: 65vw;
+        font-size: 0.75rem;
+    }
+    .content button:hover {
+        background: #d5a805;
+    }
+    .content p {
+        color: #BFBFBF;
+        font-size: 0.65rem;
+        padding: 7px 0;
+        width: 100vw;
+        text-align: center;
+    }
+    .content p a {
+        color: var(--highlight);
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .password-toggle-icon {
+        transform: translate(-45px, 15px);
+        font-size: 0.55rem;
+    }
+    input::placeholder {
+        color: rgba(191, 191, 191, 0.80);
+        font-size: 0.55rem;
+    }
+    .content button {
+        background: var(--highlight);
+        font-weight: bold;
+        border: none;
+        padding: 10px;
+        width: 82vw;
+        font-size: 0.75rem;
+    }
+    .content button:hover {
+        background: #d5a805;
+    }
+    .content p {
+        color: #BFBFBF;
+        font-size: 0.6rem;
+        padding: 7px 0;
+        width: 100vw;
+        text-align: center;
+    }
+    .content p a {
+        color: var(--highlight);
+        font-weight: bold;
+    }
+}
+
 
 /*Note head*/
 
@@ -420,10 +536,19 @@ input::placeholder {
 }
 
 .Count {
-    color: #e9e9e935;
-    font-size: 1.8rem;
-    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    color: black;
+    font-family: var(--font2);
+    font-size: 1.5rem;
+    margin-left: 15px;
     font-weight: 500;
+    padding: 20px;
+    background: var(--highlight);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -471,17 +596,10 @@ a {
     align-items: center;
 }
 
-.tag span {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background: rgb(195, 26, 195);
-    margin-right: 10px;
-}
-
 .Date {
     color: #BFBFBF;
-    font-size: 0.65rem;
+    font-size: 0.55rem;
+    font-family: var(--font2);
 }
 
 .note-title {
@@ -506,7 +624,7 @@ a {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 75%;
+    top: 70vh;
     right: 30px;
     border-radius: 100%;
 }
@@ -537,8 +655,27 @@ textarea::-webkit-scrollbar {
     margin: 20px 0;
     padding: 8px 5px;
     font-family: 'Poppins', sans-serif;
-    color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.LastEdit .GoBackButton {
+    display: flex;
+    align-items: center;
+    color: var(--highlight);
+    cursor: pointer;
+}
+
+.GoBackButton span {
+    margin-left: 5px;
+    font-size: 0.75rem;
+}
+
+.LastEdit>span {
     font-size: 0.65rem;
+    color: #bfbfbf6e;
+    font-family: var(--font2);
 }
 
 .TextAreas textarea {
@@ -564,7 +701,7 @@ textarea:focus {
     font-size: 1.3rem;
     font-weight: 600;
     min-height: 10vh;
-    height: 20vh;
+    height: 15vh;
 }
 
 .TypeContent {
@@ -573,7 +710,7 @@ textarea:focus {
     font-weight: 400;
     margin-bottom: 20px;
     min-height: 30vh;
-    height: 40vh;
+    height: 35vh;
 }
 
 .Buttons {
@@ -582,7 +719,7 @@ textarea:focus {
 
 .Buttons button {
     padding: 10px 15px;
-    font-size: 0.8rem;
+    font-size: 0.70rem;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
@@ -595,9 +732,9 @@ textarea:focus {
 }
 
 .Save {
-    border: 2px solid var(--highlight);
+    border: 2px solid rgb(68, 122, 197);
     margin-right: 7px;
-    color: var(--highlight);
+    color: rgb(68, 122, 197);
 }
 
 .Delete {
@@ -606,4 +743,253 @@ textarea:focus {
 }
 
 
-/* Disappear Left*/
+/*Search Page*/
+
+.Search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 50px 0;
+}
+
+.Search .search-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+
+.search-input input {
+    width: 100%;
+    padding: 13px 70px 13px 15px;
+    outline: none;
+    border: 2px solid #141313;
+    background: rgba(27, 27, 27, 0.10);
+    box-shadow: -1px 4px 10px 1px rgba(36, 36, 36, 0.95) inset, 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: white;
+    font-size: 0.75rem;
+    position: relative;
+    transition: 1s all;
+}
+
+.search-input button {
+    background: var(--highlight);
+    font-weight: bold;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.75rem;
+    transition: 0.3s;
+    color: black;
+    transform: translateX(-50px);
+}
+
+.search-input button:hover {
+    background: #d5a805;
+}
+
+.Results {
+    padding: 30px 40px;
+}
+
+.no-results-message {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f913;
+}
+
+.no-results-message .no-results-icon {
+    color: var(--highlight);
+    margin-bottom: 10px;
+}
+
+.no-results-message h3 {
+    color: #ddd;
+    margin: 10px 0;
+    font-size: 0.85rem;
+}
+
+.no-results-message p {
+    color: #BFBFBF;
+    margin-bottom: 20px;
+    font-size: 0.7rem;
+}
+
+.no-results-message p a {
+    color: var(--highlight);
+}
+
+
+/*Responsive rules*/
+
+@media screen and (max-width: 500px) {
+    .Navbar {
+        padding: 0 25px;
+    }
+    .main {
+        padding: 0 25px;
+    }
+    .Note-head h1 {
+        font-size: 1.4rem;
+        margin-left: 10px;
+    }
+    .Count {
+        width: 15px;
+        height: 15px;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-left: 13px;
+        padding: 15px;
+    }
+    .note-title {
+        font-size: 1rem;
+        margin: 10px 0 12px 0;
+    }
+    .note-content {
+        color: #BFBFBF;
+        font-size: 0.65rem;
+        font-weight: 400;
+        line-height: 163.186%;
+        padding: 5px 0;
+    }
+    .AddBtn {
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 70vh;
+        right: 30px;
+        border-radius: 100%;
+    }
+    .TextAreas {
+        padding: 0 25px;
+    }
+    .GoBackButton span {
+        font-size: 0.70rem;
+    }
+    .LastEdit>span {
+        font-size: 0.5rem;
+    }
+    .TextAreas textarea {
+        max-width: 100%;
+        width: 100%;
+        min-width: 100%;
+        border: none;
+        outline: none;
+        background: #242424;
+        padding: 5px;
+        line-height: 163.186%;
+        scroll-behavior: smooth;
+        resize: none;
+    }
+    textarea:focus {
+        border: none;
+        outline: none;
+    }
+    .TypeTitle {
+        color: #FFF;
+        font-size: 1rem;
+        font-weight: 600;
+        min-height: 10vh;
+        height: 12vh;
+    }
+    .TypeContent {
+        color: #BFBFBF;
+        font-size: 0.7rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+        min-height: 20vh;
+        height: 30vh;
+    }
+    .Buttons {
+        display: flex;
+    }
+    .Buttons button {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        background: none;
+    }
+    .Search .search-input {
+        width: 95vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30px;
+    }
+    .search-input input {
+        width: 100%;
+        padding: 13px 70px 13px 15px;
+        outline: none;
+        border: 2px solid #141313;
+        background: rgba(27, 27, 27, 0.10);
+        box-shadow: -1px 4px 10px 1px rgba(36, 36, 36, 0.95) inset, 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        color: white;
+        font-size: 0.75rem;
+        position: relative;
+        transition: 1s all;
+    }
+    .search-input button {
+        background: var(--highlight);
+        font-weight: bold;
+        border: none;
+        padding: 12px 15px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.65rem;
+        transition: 0.3s;
+        color: black;
+        transform: translateX(-50px);
+    }
+    .search-input button:hover {
+        background: #d5a805;
+    }
+    .Results {
+        padding: 15px 30px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .LastEdit {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .LastEdit .GoBackButton {
+        display: flex;
+        margin-bottom: 12px;
+    }
+    .GoBackButton span {
+        margin-left: 5px;
+        font-size: 0.8rem;
+    }
+    .LastEdit>span {
+        font-size: 0.51rem;
+        color: #bfbfbf6e;
+        font-family: var(--font2);
+    }
+    .Buttons button {
+        padding: 10px 15px;
+        font-size: 0.65rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        background: none;
+    }
+    .search-input {
+        width: 95vw;
+        margin-left: 15px;
+    }
+}
