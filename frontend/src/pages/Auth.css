@@ -32,6 +32,7 @@ body {
 
 .main {
     padding: 0 50px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -604,7 +605,7 @@ textarea:focus {
 
 .Buttons button {
     padding: 10px 15px;
-    font-size: 0.8rem;
+    font-size: 0.70rem;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
@@ -708,4 +709,173 @@ textarea:focus {
 
 .no-results-message p a {
     color: var(--highlight);
+}
+
+
+/*Responsive rules*/
+
+@media screen and (max-width: 500px) {
+    .Navbar {
+        padding: 0 25px;
+    }
+    .main {
+        padding: 0 25px;
+    }
+    .Note-head h1 {
+        font-size: 1.4rem;
+        margin-left: 10px;
+    }
+    .Count {
+        width: 15px;
+        height: 15px;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-left: 13px;
+        padding: 15px;
+    }
+    .note-title {
+        font-size: 1rem;
+        margin: 10px 0 12px 0;
+    }
+    .note-content {
+        color: #BFBFBF;
+        font-size: 0.65rem;
+        font-weight: 400;
+        line-height: 163.186%;
+        padding: 5px 0;
+    }
+    .AddBtn {
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 70vh;
+        right: 30px;
+        border-radius: 100%;
+    }
+    .TextAreas {
+        padding: 0 25px;
+    }
+    .GoBackButton span {
+        font-size: 0.70rem;
+    }
+    .LastEdit>span {
+        font-size: 0.5rem;
+    }
+    .TextAreas textarea {
+        max-width: 100%;
+        width: 100%;
+        min-width: 100%;
+        border: none;
+        outline: none;
+        background: #242424;
+        padding: 5px;
+        line-height: 163.186%;
+        scroll-behavior: smooth;
+        resize: none;
+    }
+    textarea:focus {
+        border: none;
+        outline: none;
+    }
+    .TypeTitle {
+        color: #FFF;
+        font-size: 1rem;
+        font-weight: 600;
+        min-height: 10vh;
+        height: 12vh;
+    }
+    .TypeContent {
+        color: #BFBFBF;
+        font-size: 0.7rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+        min-height: 20vh;
+        height: 30vh;
+    }
+    .Buttons {
+        display: flex;
+    }
+    .Buttons button {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        background: none;
+    }
+    .Search .search-input {
+        width: 95vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30px;
+    }
+    .search-input input {
+        width: 100%;
+        padding: 13px 70px 13px 15px;
+        outline: none;
+        border: 2px solid #141313;
+        background: rgba(27, 27, 27, 0.10);
+        box-shadow: -1px 4px 10px 1px rgba(36, 36, 36, 0.95) inset, 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        color: white;
+        font-size: 0.75rem;
+        position: relative;
+        transition: 1s all;
+    }
+    .search-input button {
+        background: var(--highlight);
+        font-weight: bold;
+        border: none;
+        padding: 12px 15px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.65rem;
+        transition: 0.3s;
+        color: black;
+        transform: translateX(-50px);
+    }
+    .search-input button:hover {
+        background: #d5a805;
+    }
+    .Results {
+        padding: 15px 30px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .LastEdit {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .LastEdit .GoBackButton {
+        display: flex;
+        margin-bottom: 12px;
+    }
+    .GoBackButton span {
+        margin-left: 5px;
+        font-size: 0.8rem;
+    }
+    .LastEdit>span {
+        font-size: 0.51rem;
+        color: #bfbfbf6e;
+        font-family: var(--font2);
+    }
+    .Buttons button {
+        padding: 10px 15px;
+        font-size: 0.65rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        background: none;
+    }
+    .search-input {
+        width: 95vw;
+        margin-left: 15px;
+    }
 }

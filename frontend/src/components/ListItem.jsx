@@ -17,8 +17,8 @@ const ListItem = ({ note }) => {
     <div className="Note">
       <Link to={`/notes/${note.id}`}>
         <DateComponent date={note?.updated_at} color={getRandomColor()}/>
-        <p className='note-title'>{truncateText(note?.title, 70)}</p>
-        <p className='note-content'>{truncateText(note?.content, 140)}</p>
+        <p className='note-title'>{truncateText(note?.title, 45)}</p>
+        <p className='note-content'>{truncateText(note?.content, 50)}</p>
       </Link>
     </div>
   );

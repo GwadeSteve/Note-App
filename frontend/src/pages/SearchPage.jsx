@@ -43,7 +43,7 @@ const SearchPage = () => {
                         value={query}
                         onChange={e => setQuery(e.target.value)}
                     />
-                    <button onClick={searchNote}>Search</button>
+                    <button onClick={searchNote} type='submit'>Search</button>
                 </div>
             </div>
             <div className="Results">
