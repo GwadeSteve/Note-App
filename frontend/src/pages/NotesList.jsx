@@ -43,7 +43,6 @@ const NotesList = () => {
   const getRandomColor = () => {
     return colors[Math.floor(Math.random() * colors.length)];
   };
-  const randomColor = getRandomColor();
 
   return (
     <div>
@@ -57,7 +56,7 @@ const NotesList = () => {
           {notes.length === 0 ? (
             <NoNotes />
           ) : (
-            notes.map((note, index) => <ListItem key={index} note={note} randomColor={randomColor} />)
+            notes.map((note, index) => <ListItem key={index} note={note} randomColor={getRandomColor()} />)
           )}
         </div>
       </div>
