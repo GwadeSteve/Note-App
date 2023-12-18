@@ -3,7 +3,7 @@ import DateComponent from './DateComponent';
 import { Link } from 'react-router-dom';
 import '../pages/Auth.css';
 
-const ListItem = ({ note }) => {
+const ListItem = ({ note, randomColor }) => {
   const truncateText = (text, maxLength) => {
     return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
   };
@@ -11,7 +11,7 @@ const ListItem = ({ note }) => {
   return (
     <div className="Note">
       <Link to={`/notes/${note.id}`}>
-        <DateComponent date={note?.updated_at}/>
+        <DateComponent date={note?.updated_at} color={randomColor}/>
         <p className='note-title'>{truncateText(note?.title, 70)}</p>
         <p className='note-content'>{truncateText(note?.content, 140)}</p>
       </Link>

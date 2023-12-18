@@ -421,10 +421,19 @@ input::placeholder {
 }
 
 .Count {
-    color: #e9e9e935;
-    font-size: 1.8rem;
-    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    color: black;
+    font-family: var(--font2);
+    font-size: 1.5rem;
+    margin-left: 15px;
     font-weight: 500;
+    padding: 20px;
+    background: var(--highlight);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -470,14 +479,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.tag span {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background: rgb(195, 26, 195);
-    margin-right: 10px;
 }
 
 .Date {
