@@ -263,45 +263,8 @@ svg {
     color: #e6e6e69d;
 }
 
-@media screen and (max-width: 690px) {
-    .Left {
-        padding: 0 10px;
-    }
-    .Random h1 {
-        font-size: 1.4rem;
-        padding: 10px 0;
-        color: white;
-        border-bottom: 2px solid var(--highlight);
-        margin-bottom: 20px;
-    }
-    .Random .Quote {
-        font-family: var(--font3);
-        font-size: 1rem;
-        color: #e6e6e69d;
-        margin-bottom: 15px;
-    }
-    .Random .TiTle {
-        font-size: 0.75rem;
-        font-weight: light;
-    }
-    .Random .Author {
-        font-size: 0.65rem;
-        font-weight: bold;
-        color: #e6e6e69d;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .Left {
-        display: none;
-    }
-    .Right {
-        width: 100%;
-    }
-}
-
 .Right {
-    min-width: 55%;
+    width: 100%;
     height: 100%;
     padding: 0 40px;
     display: flex;
@@ -325,6 +288,7 @@ svg {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .inputs {
@@ -333,6 +297,7 @@ svg {
     justify-content: center;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 .input {
@@ -381,8 +346,7 @@ input::placeholder {
     background: var(--highlight);
     font-weight: bold;
     border: none;
-    padding: 10px 40px;
-    width: 100%;
+    padding: 10px 38%;
     margin: 15px 0;
     border-radius: 3px;
     cursor: pointer;
@@ -404,6 +368,155 @@ input::placeholder {
 .content p a {
     color: var(--highlight);
     font-weight: bold;
+}
+
+@media screen and (max-width: 690px) {
+    .Left {
+        padding: 0 10px;
+    }
+    .Random h1 {
+        font-size: 1.4rem;
+        padding: 10px 0;
+        color: white;
+        border-bottom: 2px solid var(--highlight);
+        margin-bottom: 20px;
+    }
+    .Random .Quote {
+        font-family: var(--font3);
+        font-size: 1rem;
+        color: #e6e6e69d;
+        margin-bottom: 15px;
+    }
+    .Random .TiTle {
+        font-size: 0.75rem;
+        font-weight: light;
+    }
+    .Random .Author {
+        font-size: 0.65rem;
+        font-weight: bold;
+        color: #e6e6e69d;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .Left {
+        display: none;
+    }
+    .Right {
+        width: 100vw;
+    }
+    .Right h1 {
+        font-size: 1.5rem;
+    }
+    .Right form {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content {
+        width: 100%;
+    }
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .input {
+        margin: 4px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background: #242424;
+        width: 100%;
+    }
+    .input input {
+        width: 90vw;
+        padding: 13px 50px 13px 15px;
+        outline: none;
+        border: 2px solid #141313;
+        background: rgba(27, 27, 27, 0.10);
+        box-shadow: -1px 4px 10px 1px rgba(36, 36, 36, 0.95) inset, 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+        color: white;
+        font-size: 0.75rem;
+        position: relative;
+        transition: 1s all;
+    }
+    .password-toggle-icon {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        transform: translate(-50%, 15px);
+        cursor: pointer;
+        font-size: 0.6rem;
+        color: var(--highlight);
+        font-weight: bold;
+        user-select: none;
+    }
+    input::placeholder {
+        color: rgba(191, 191, 191, 0.80);
+        font-size: 0.6rem;
+    }
+    .content button {
+        background: var(--highlight);
+        font-weight: bold;
+        border: none;
+        padding: 10px;
+        width: 65vw;
+        font-size: 0.75rem;
+    }
+    .content button:hover {
+        background: #d5a805;
+    }
+    .content p {
+        color: #BFBFBF;
+        font-size: 0.65rem;
+        padding: 7px 0;
+        width: 100vw;
+        text-align: center;
+    }
+    .content p a {
+        color: var(--highlight);
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .password-toggle-icon {
+        transform: translate(-45px, 15px);
+        font-size: 0.55rem;
+    }
+    input::placeholder {
+        color: rgba(191, 191, 191, 0.80);
+        font-size: 0.55rem;
+    }
+    .content button {
+        background: var(--highlight);
+        font-weight: bold;
+        border: none;
+        padding: 10px;
+        width: 82vw;
+        font-size: 0.75rem;
+    }
+    .content button:hover {
+        background: #d5a805;
+    }
+    .content p {
+        color: #BFBFBF;
+        font-size: 0.6rem;
+        padding: 7px 0;
+        width: 100vw;
+        text-align: center;
+    }
+    .content p a {
+        color: var(--highlight);
+        font-weight: bold;
+    }
 }
 
 
