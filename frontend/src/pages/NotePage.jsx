@@ -14,10 +14,10 @@ const NotePage = () => {
 
     const token = localStorage.getItem('userToken');
     if (!token ) {
-      console.log('Token Not found')
-      navigate('/');
+      alert("We couldn't find your access tokens, You will be redirected to the auth pages")
+      navigate('/login');
     }
-    if (!id) {
+    if (!id && token) {
       navigate('/notes');
     } else if (id === "create") {
       setNote({ title: '', content: '' });
@@ -59,7 +59,7 @@ const NotePage = () => {
       setTimeout(() => {
         navigate('/notes');
         alert('Note updated successfully!');
-      }, 500);
+      }, 100);
     } catch (error) {
       console.error('Error updating note:', error);
       alert('Failed to update note. Please try again.');
@@ -78,7 +78,7 @@ const NotePage = () => {
       setTimeout(() => {
         navigate('/notes');
         alert('Note deleted successfully!');
-      }, 500);
+      }, 100);
     } catch (error) {
       console.error('Error deleting note:', error);
       alert('Failed to delete note. Please try again.');
@@ -99,7 +99,7 @@ const NotePage = () => {
       setTimeout(() => {
         navigate('/notes');
         alert('Note created successfully!');
-      }, 500);
+      }, 100);
     } catch (error) {
       console.error('Error creating note:', error);
       alert('Failed to create note. Please try again.');
@@ -111,12 +111,12 @@ const NotePage = () => {
       deleteNote();
       setTimeout(() => {
         alert('You saved a Note with an empty content and hence was deleted.');
-      }, 500);
+      }, 100);
     } else if (id !== 'create' && !note.title && !note.content) {
       deleteNote();
       setTimeout(() => {
         alert('You saved a Note with an empty title and content and hence was deleted.');
-      }, 500);
+      }, 100);
     } else if (id !== 'create') {
       updateNote();
     } else if (!note.title || !note.content) {

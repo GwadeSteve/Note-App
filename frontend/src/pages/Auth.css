@@ -9,6 +9,8 @@
 body {
     background: #242424;
     overflow-x: hidden;
+    height: 100%;
+    scroll-behavior: smooth;
 }
 
 :root {

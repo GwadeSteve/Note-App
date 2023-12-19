@@ -21,7 +21,7 @@ const FormRight = ({ page }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       if (page === 'Login') {
         const { email, password } = formData;
@@ -32,16 +32,15 @@ const FormRight = ({ page }) => {
           },
           body: JSON.stringify({ email, password }),
         });
-
-        if (response.ok) {
+  
+        if (response.status === 200) {
           const data = await response.json();
           localStorage.setItem('userToken', data.token);
           localStorage.setItem('userFirstName', data.user.first_name);
           navigate('/');
         } else {
-          const errorData = await response.json();
-          console.error('Registration failed:', errorData);
-          alert(`Registration failed: ${errorData.detail || 'Unknown error'}`);
+          console.error('Login failed:', response.statusText);
+          alert(`Login failed: ${response.statusText || 'Unknown error'}`);
         }
       } else {
         const { first_name, last_name, email, password, confirmPassword } = formData;
@@ -54,25 +53,24 @@ const FormRight = ({ page }) => {
             },
             body: JSON.stringify(registrationData),
           });
-
-          if (response.ok) {
+  
+          if (response.status === 201) {
             const data = await response.json();
             localStorage.setItem('userToken', data.token);
-            localStorage.setItem('userFirstName', first_name); // Save the first name
+            localStorage.setItem('userFirstName', first_name);
             navigate('/');
           } else {
-            const errorData = await response.json();
-            console.error('Registration failed:', errorData);
-            alert(`Registration failed: ${errorData.detail || 'Unknown error'}`);
+            alert(`Registration failed: ${response.statusText || 'Unknown error'}`);
           }
         } else {
           alert('Password and Confirm Password do not match!');
         }
       }
     } catch (error) {
-      console.error('Error:', error);
+      alert('Error');
     }
   };
+  
 
   return (
     <div className="Right">
