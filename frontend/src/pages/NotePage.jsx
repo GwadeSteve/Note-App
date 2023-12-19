@@ -16,7 +16,10 @@ const NotePage = () => {
     if (!token ) {
       alert("We couldn't find your access tokens, You will be redirected to the auth pages")
       navigate('/login');
-    }else if (id === "create") {
+    }
+    if (!id && token) {
+      navigate('/notes');
+    } else if (id === "create") {
       setNote({ title: '', content: '' });
     } else {
       const getNote = async () => {
