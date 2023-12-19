@@ -14,7 +14,8 @@ const NotesList = () => {
   useEffect(() => {
     const token = localStorage.getItem('userToken');
     if (!token ) {
-      navigate('/')
+      alert("We couldn't find your access tokens, You will be redirected to the auth pages")
+      navigate('/login');
     }
     getNotes();
   }, [navigate]);
