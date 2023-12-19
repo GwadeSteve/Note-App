@@ -85,7 +85,7 @@ DATABASES = {
 # For production on render
 #DATABASE_URL = os.environ.get("DATABASE_URL")
 
-DATABASES['default'] = dj_database_url.parse("postgres://noteflow_user:hDpEWSjPfPZdt0YlwxNYhvQgy9Tx6Olp@dpg-cm0otjol5elc73ee71a0-a.frankfurt-postgres.render.com/noteflow")
+#DATABASES['default'] = dj_database_url.parse("postgres://noteflow_user:hDpEWSjPfPZdt0YlwxNYhvQgy9Tx6Olp@dpg-cm0otjol5elc73ee71a0-a.frankfurt-postgres.render.com/noteflow")
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
